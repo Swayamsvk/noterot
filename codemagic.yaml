@@ -5,14 +5,19 @@ workflows:
     environment:
       node: 18.16.0
       java: 17
-      android: true
       vars:
         PACKAGE_NAME: 'com.example.myapp' # Replace with your actual package name
+      android_signing:
+        - keystore_reference # Optional if using Android code signing
 
     scripts:
       - name: Install npm dependencies
         script: |
           npm install
+
+      - name: Install CocoaPods (if using iOS later)
+        script: |
+          gem install cocoapods || true
 
       - name: Clean previous builds
         script: |
