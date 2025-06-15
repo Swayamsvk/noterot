@@ -1,21 +1,12 @@
 workflows:
-  react-native-android:
-    name: React Native Android Dry Run
-    max_build_duration: 60
+  react-native-dry-run:
+    name: React Native Dry Run (No Build)
+    max_build_duration: 10
     environment:
       node: 18.16.0
       java: 17
 
     scripts:
-      - name: Install dependencies
+      - name: Install dependencies only
         script: |
           npm install
-
-      - name: Clean and build unsigned APK
-        script: |
-          cd android
-          ./gradlew clean
-          ./gradlew assembleRelease
-
-    artifacts:
-      - android/app/build/outputs/apk/release/app-release.apk
