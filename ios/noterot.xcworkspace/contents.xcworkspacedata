@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Workspace
+   version = "1.0">
+   <FileRef
+      location = "group:noterot.xcodeproj">
+   </FileRef>
+   <FileRef
+      location = "group:Pods/Pods.xcodeproj">
+   </FileRef>
+   <Group
+      location = "group:Whisperer"
+      name = "Whisperer">
+      <FileRef
+         location = "group:ggml.h">
+      </FileRef>
+      <FileRef
+         location = "group:ggml.c">
+      </FileRef>
+      <FileRef
+         location = "group:whisper.h">
+      </FileRef>
+      <FileRef
+         location = "group:Whisperer.m">
+      </FileRef>
+      <FileRef
+         location = "group:whisper.cpp">
+      </FileRef>
+   </Group>
+</Workspace>

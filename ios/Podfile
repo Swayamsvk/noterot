@@ -17,6 +17,9 @@ end
 target 'noterot' do
   config = use_native_modules!
 
+  permissions_path = '../node_modules/react-native-permissions/ios'
+  pod 'Permission-Microphone', :path => "#{permissions_path}/Microphone"
+
   use_react_native!(
     :path => config[:reactNativePath],
     # An absolute path to your application root.
