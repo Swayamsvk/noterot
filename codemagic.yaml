@@ -1,33 +1,20 @@
 workflows:
   react-native-android:
-    name: React Native Android Workflow
+    name: React Native Android Dry Run
     max_build_duration: 60
     environment:
       node: 18.16.0
       java: 17
-      vars:
-        PACKAGE_NAME: 'com.example.myapp' # Replace with your actual package name
-      android_signing:
-        - keystore_reference # Optional if using Android code signing
 
     scripts:
-      - name: Install npm dependencies
+      - name: Install dependencies
         script: |
           npm install
 
-      - name: Install CocoaPods (if using iOS later)
-        script: |
-          gem install cocoapods || true
-
-      - name: Clean previous builds
+      - name: Clean and build unsigned APK
         script: |
           cd android
           ./gradlew clean
-          cd ..
-
-      - name: Build Android APK
-        script: |
-          cd android
           ./gradlew assembleRelease
 
     artifacts:
